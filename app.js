@@ -1,8 +1,13 @@
 // OOP Racing Game example boilerplate code
 $(document).ready(function(){
-function Game() {
+
   var game = new Game();
   game.init();
+
+});
+
+
+function Game() {
 
   //Create a new instance of player 1
   this.player1 = new Player("joe");
@@ -11,14 +16,13 @@ function Game() {
   this.player2 = new Player("john");
 
   //Create the track
-  this.track = new Track();
-
-  this.init();
+  // this.track = new Track();
 }
 
 // `Game.prototype.init` kicks off a new game with a board and two players
 Game.prototype.init = function() {
-  $(document).keydown(function() { 
+  $(document).keydown(function(event) { 
+    console.log("hhlsdhiwe");
     // if keydown == a
     if(event.which ===65){
       var left = $("#player1").css("left");
@@ -61,5 +65,3 @@ Player.prototype.move = function() {
 
 //   //Store any other properties that board may have below, such as a reset option
 // }
-
-});
